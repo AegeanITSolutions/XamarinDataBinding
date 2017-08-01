@@ -69,49 +69,5 @@
  
             </TableSection>
         </TableRoot>
-        </TableView>
-        <!--<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Curent Date"></Label>
-
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Approved"></Label>
-        <Label Style="{DynamicResource labelStyle}"   Grid.Row="3" Grid.Column="0" Text="Apply Date"></Label>
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="3" Grid.Column="1" Text="Approve Date"></Label>
-        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="ApprovedApplyDatePicker" Date="{Binding ApprovedApplyDate}" Grid.Row="4" Grid.Column="0"></DatePicker>
-        <DatePicker   Style="{DynamicResource DatePickerStyle}" x:Name="ApprovedApproveDatePicker" Date="{Binding ApprovedApproveDate}" Grid.Row="4" Grid.Column="1"></DatePicker>
-
-
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="5" Grid.Column="0"  Text="Duration"></Label>
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="5" Grid.Column="1"   Text="{Binding Duration, StringFormat=' {0} Day(s) '}}"></Label>
-
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Waiting"></Label>
-        <Label Style="{DynamicResource labelStyle}"   Grid.Row="7" Grid.Column="0" Text="Apply Date" ></Label>
-        <Label Style="{DynamicResource labelStyle}"  Grid.Row="7" Grid.Column="1" Text="Approve Date" ></Label>
-        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="WaitingApplyDatePicker" Date="{Binding WaitingApplyDate}" Grid.Row="8" Grid.Column="0"></DatePicker>
-        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="WaitingApproveDatePicker" Date="{Binding WaitingApproveDate}" Grid.Row="8" Grid.Column="1"></DatePicker>
-
-    </Grid>-->
-    
+        </TableView>  
 </ContentPage>
