@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XamarinDataBinding"
+             Style="{DynamicResource backgroundStyle}"
+             Title="Estimated Response Calculator"
+             x:Class="XamarinDataBinding.MainPage">
+ 
+        <TableView Intent="Settings"  >
+            <TableRoot>
+                <TableSection Title="Last Approved Application">
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                        <Label Style="{DynamicResource labelStyle}" HorizontalTextAlignment="End" VerticalTextAlignment="Center"   Grid.Column="0" Text="Apply Date :"></Label>
+                        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="ApprovedApplyDatePicker" Date="{Binding ApprovedApplyDate}"   Grid.Column="1"></DatePicker>
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                        <Label Style="{DynamicResource labelStyle}"  HorizontalTextAlignment="End" VerticalTextAlignment="Center"  Grid.Column="0" Text="Approve Date :"></Label>
+                            <DatePicker   Style="{DynamicResource DatePickerStyle}" x:Name="ApprovedApproveDatePicker" Date="{Binding ApprovedApproveDate}"   Grid.Column="1"></DatePicker>
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label HorizontalTextAlignment="End"    VerticalTextAlignment="Center" Style="{DynamicResource labelStyle}"    Grid.Column="0" Text="Duration :"></Label>
+                        <Label HorizontalTextAlignment="Start"    VerticalTextAlignment="Center" Style="{DynamicResource labelStyle}"    Grid.Column="1"   Text="{Binding Duration, StringFormat=' {0} Day(s) '}}"></Label>
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="My Application"    >
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Style="{DynamicResource labelStyle}" VerticalTextAlignment="Center" HorizontalTextAlignment="End"   Grid.Column="0" Text="Apply Date :"></Label>
+                            <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="WaitingApplyDatePicker" Date="{Binding WaitingApplyDate}"   Grid.Column="1"></DatePicker>
+                        </Grid>
+                    </ViewCell>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                        <Label Style="{DynamicResource labelStyle}"   VerticalTextAlignment="Center" HorizontalTextAlignment="End"   Grid.Column="0" Text=" Estimated Response Date :"></Label>
+                        <DatePicker   Style="{DynamicResource DatePickerStyle}" x:Name="WaitingApproveDatePicker" Date="{Binding WaitingApproveDate}"   Grid.Column="1"></DatePicker>
+                        </Grid>
+                    </ViewCell>
+                </TableSection>
+            <TableSection Title="Estimated Duration">
+                <ViewCell>
+                    <Slider Minimum="{Binding MinumumDuration}" Maximum="{Binding MaximumDuration}" x:Name="DurationSlider" Value="{Binding Duration}"></Slider>
+                </ViewCell>
+ 
+            </TableSection>
+        </TableRoot>
+        </TableView>
+        <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Curent Date"></Label>
+
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Approved"></Label>
+        <Label Style="{DynamicResource labelStyle}"   Grid.Row="3" Grid.Column="0" Text="Apply Date"></Label>
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="3" Grid.Column="1" Text="Approve Date"></Label>
+        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="ApprovedApplyDatePicker" Date="{Binding ApprovedApplyDate}" Grid.Row="4" Grid.Column="0"></DatePicker>
+        <DatePicker   Style="{DynamicResource DatePickerStyle}" x:Name="ApprovedApproveDatePicker" Date="{Binding ApprovedApproveDate}" Grid.Row="4" Grid.Column="1"></DatePicker>
+
+
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="5" Grid.Column="0"  Text="Duration"></Label>
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="5" Grid.Column="1"   Text="{Binding Duration, StringFormat=' {0} Day(s) '}}"></Label>
+
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="Waiting"></Label>
+        <Label Style="{DynamicResource labelStyle}"   Grid.Row="7" Grid.Column="0" Text="Apply Date" ></Label>
+        <Label Style="{DynamicResource labelStyle}"  Grid.Row="7" Grid.Column="1" Text="Approve Date" ></Label>
+        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="WaitingApplyDatePicker" Date="{Binding WaitingApplyDate}" Grid.Row="8" Grid.Column="0"></DatePicker>
+        <DatePicker  Style="{DynamicResource DatePickerStyle}"  x:Name="WaitingApproveDatePicker" Date="{Binding WaitingApproveDate}" Grid.Row="8" Grid.Column="1"></DatePicker>
+
+    </Grid>-->
+    
+</ContentPage>
